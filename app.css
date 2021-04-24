@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #272727;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.hambuger-container {
+  height: 90px;
+  width: 90px;
+  /* border: 2px solid #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.hambuger-menu {
+  background: #fff;
+  width: 70px;
+  height: 8px;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+
+.hambuger-menu::after,
+.hambuger-menu::before {
+  content: "";
+  background: #fff;
+  width: 70px;
+  height: 8px;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+
+.hambuger-menu::after {
+  transform: translateY(16px);
+}
+.hambuger-menu::before {
+  transform: translateY(-16px);
+}
+.hambuger-container.open .hambuger-menu {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.hambuger-container.open .hambuger-menu::before {
+  transform: rotate(45deg) translate(35px, -35px);
+  /* transform: rotate(45deg); */
+}
+.hambuger-container.open .hambuger-menu::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+  /* transform: rotate(-45deg); */
+}
